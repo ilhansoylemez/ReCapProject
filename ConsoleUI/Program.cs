@@ -4,14 +4,10 @@ using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 
-    CarManager carManager = new CarManager(new EfCarDal());
-    var val = carManager.GetByCarDetail();
-    if (val.Success==true)
-    {
-        foreach (var item in val.Data)
-        {
-            Console.WriteLine(item.CarName + " - " + item.ColorName + " - " + item.BrandName + " - " + item.DailyPrice);
-        }
-    }
+User user = new User() {FirstName="Furkan",LastName="Söylemez",Email="furkan000@gmail.com",Password="321" };
+UserManager userManager = new UserManager(new EfUserDal());
+
+var a = userManager.Add(user);
 
 
+Console.WriteLine("Eklendi:" + a.Message);
