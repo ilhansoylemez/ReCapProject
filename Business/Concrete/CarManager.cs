@@ -53,14 +53,14 @@ namespace Business.Concrete
             return new SuccessDataResult<Car>(_ıCarDal.Get(p => p.CarId == id), Messages.TransactionSuccesfull);
         }
 
-        public IDataResult<Car> GetCarsByBrandId(int id)
+        public IDataResult<List<Car>> GetCarsByBrandId(int id)
         {
-            return new SuccessDataResult<Car>(_ıCarDal.Get(p => p.BrandId == id), Messages.TransactionSuccesfull);
+            return new SuccessDataResult<List<Car>>(_ıCarDal.GetAll(p => p.BrandId == id), Messages.TransactionSuccesfull);
         }
 
-        public IDataResult<Car> GetCarsByColorId(int id)
+        public IDataResult<List<Car>> GetCarsByColorId(int id)
         {
-            return new SuccessDataResult<Car>(_ıCarDal.Get(p => p.ColorId == id), Messages.TransactionSuccesfull);
+            return new SuccessDataResult<List<Car>>(_ıCarDal.GetAll(p => p.ColorId == id), Messages.TransactionSuccesfull);
         }
 
         public IResult Update(Car car)
