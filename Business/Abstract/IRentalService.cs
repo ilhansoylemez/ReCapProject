@@ -11,5 +11,9 @@ namespace Business.Abstract
     public interface IRentalService
     {
         public IResult Add(Rental rental);
+        public IResult Update(Rental rental);
+        public IResult Delete(Rental rental);
+        IDataResult<List<Rental>> GetAll();
+        IDataResult<Rental> GetById(int id);
     }
 }
