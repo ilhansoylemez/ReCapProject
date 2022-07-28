@@ -48,5 +48,7 @@ namespace Business.Concrete
             _ıcolorDal.Update(color);
             return new SuccessResult(Messages.UpdateSuccesful);
         }
+       
+
     }
 }
